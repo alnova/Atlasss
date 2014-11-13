@@ -1,0 +1,5 @@
+{% extends 'atlas/index.html' %}
+                {% block search %}
+                // Update the URL used by the image Recommendations
+                queryURL = "../atlas/json/instSearch/" + author + "/" + wordPrior + "+" + wordCurrent + "/"
+                {% endblock %}

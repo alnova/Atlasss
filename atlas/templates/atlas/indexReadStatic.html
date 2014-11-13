@@ -1,0 +1,12 @@
+{% extends 'atlas/index.html' %}
+{% block staticImg %}
+            // performSearch();
+{% endblock %}
+
+{% block center %}
+    {{ content }}
+     <form action="/atlas/rateStory?mode={{mode}}&id={{participantID}}" method="post">{% csrf_token %}
+               <button type="submit" class="btn">Done</button>
+            </form>
+
+{% endblock %}

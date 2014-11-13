@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <meta charset="utf-8">
+   <title>{% block title %}Graph: Drawing A Graph{% endblock %}</title>
+   </head>
+<body>
+   <svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id='smalldot' patternUnits="userSpaceOnUse" width="5" height="5">
+      <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgo8cmVjdCB3aWR0aD0nNScgaGVpZ2h0PSc1JyBmaWxsPScjZmZmJy8+CjxyZWN0IHdpZHRoPScxJyBoZWlnaHQ9JzEnIGZpbGw9JyNjY2MnLz4KPC9zdmc+" x="0" y="0" width="5" height="5">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+
+<div id='page'>
+
+
+</div>
+
+        <script src="/media/js/d3.v3.min.js"></script>
+        <style type="text/css">
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: #000000;
+                font-family: "Minion Pro", Gentium, "Gentium Basic", "Hoefler Text", Constantia, "Palatino Linotype", Georgia, serif;
+            }
+            #page {
+              background-color: #ffffff;
+            }
+        </style>
+
+        <script type="text/javascript">
+            // d3.json("/media/unifiedData.json", function(error, data){
+            //     //use data here
+            //     //console.log("ready")
+            //     //console.log(data[''])
+            //     for (story in data) {
+            //         //console.log(story)
+            //         for (element in story){
+            //           //  console.log(element)
+            //         }
+            //     //Do your logic with the property here
+            //     }
+            // })
+
+            //Width and height
+            var w = 1024;
+            var h = 2500;
+            var offset = 100;
+
+            var dataset =  [
+            {% for entry in dataSet %}
+            {{ entry}}
+            {% endfor %}
+ ]
+
+            //Create SVG element
+            d3.select("body")
+                .append("svg")
+
+            var svg = d3.select("#page")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h)
+           svg.selectAll("circle")
+               .data(dataset)
+               // d3.csv("sample-data.csv", function(error, data) {
+               //    data.forEach(function(d) {
+               //        d.date = parseDate(d['Date Purchased']);
+               //    });
+               .enter()
+               .append("circle")
+               //41 Columns
+               // 21 Rows
+               // Just make them square to biggest one...
+               .attr("cx", function(d,i) {
+                // Horizontal Spacing
+                return (i % 42)*20+100;
+               })
+               .attr("cy", function(d,i) {
+                  // Vertical Spacing
+                    return (parseInt(i/42)+1)*21;
+               })
+               .attr("r", function(d,i) {
+                    if ( parseInt(i/42)+1 == 22 ) { return 6;}
+                    else {
+                    return d*30;
+                  }
+              })
+               .attr("opacity", 0.7)
+               .attr("fill",
+                   function(d,i) {
+                    if (i%42 < 15) { return '#ef2269';}
+                    if (i%42 < 19) { return '#1f78b4';}
+                    if (i%42 < 30) { return  '#a0df55';}
+                    if (i%42 < 42) { return "black";}
+                    else { return "white";}
+                  })
+
+            // svg.selectAll("text")
+            //    .data(wordDataset)
+            //    .enter()
+            //    .append("text")
+            //    .text( function(d){ return d.text } )
+            //    .attr("x", function(d){ return d.x })
+            //    .attr("y", function(d){ return d.y  })
+
+
+
+
+
+        </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47389602-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
