@@ -1,0 +1,236 @@
+/*
+* Petra Creative One Page Template V1.0
+* Version 1.0
+* Copyright 2014, Limitless SARL
+* www.limitless.ma
+*/
+
+
+/* Table of Content
+==================================================
+	#Reset & Basics
+	#Basic Styles
+	#Typography
+	#Links
+	#Buttons
+	#Font Css Rmobile-navigationes
+	#Misc 
+==================================================*/
+
+
+
+
+
+/* #Reset & Basics
+================================================== */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing :border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, mobile-navigation, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline; 
+	text-decoration:none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block; 
+}
+
+ol, mobile-navigation {
+	list-style: none; 
+}
+
+blockquote, q {
+	quotes: none; 
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none; 
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+		
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+*::-moz-selection {
+    background: #111111;
+    color: #ffffff;
+}
+
+a:focus {
+	outline: 0;
+}
+	
+::selection {
+	color: #ffffff;
+	background: #111111;
+}
+
+::-moz-selection {
+	color: #ffffff;
+	background: #111111;
+}
+
+/* #Basic Styles
+================================================== */
+body {
+	background: #ffffff;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: #999;
+	letter-spacing: 0;
+	-webkit-font-smoothing: antialiased;
+	/*-webkit-text-size-adjust: 100%;*/
+	overflow-x: hidden;
+}
+
+.title {
+	text-transform:uppercase;
+	position:relative;
+	display:inline-block;
+	margin-bottom:30px;
+	font-family: "Quicksand";
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.title:after {
+	border-bottom: 2px solid #000000;
+    content: "";
+    display: block;
+    position: relative;
+    top: 15px;
+    width: 20px;
+    z-index: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+
+/* #Typography =================================== */
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+	font-weight: 700; 
+	font-family: "Quicksand";
+}
+
+h1 {
+	font-size:26px;
+}
+
+h2 {
+	font-size:18px;
+}
+
+h3 {
+	font-size:16px;
+}
+
+em { 
+	font-style: italic; 
+}
+
+strong { 
+	font-weight: bold;
+	color: #333; 
+}
+
+small { 
+	font-size: 80%;
+}
+
+
+/* #Links ======================================== */
+
+a,.errorForm {
+	color:#111111;
+	-moz-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+
+/* #Buttons ====================================== */
+
+button {
+	background: transparent;
+	border: 2px solid #bf963d;
+	border-radius: 2px;
+	color: #bf963d;
+	cursor: pointer;
+	font-family: "QuickSand";
+	font-size: 14px;
+	font-weight: 700;
+	outline: none;
+	padding: 18px 20px;
+	text-transform: uppercase;
+	min-width: 200px;
+}
+
+button:hover {
+	background: #bf963d;
+	color: #ffffff;
+}
+
+
+/* #Misc ========================================= */
+.remove-bottom { 
+	margin-bottom: 0 !important; 
+}
+
+.half-bottom { 
+	margin-bottom: 10px !important; 
+}
+
+.add-bottom { 
+	margin-bottom: 20px !important;
+}
+
+.offset {
+	padding-top: 90px; 
+	padding-bottom: 90px;
+}
+
+.section {
+	text-align:center;
+}
+
+/*Slider*/
+.flex-control-nav li {
+	margin: 0 6px !important;
+}
+
+.flex-control-paging li a {
+	border: 1px solid #ffffff !important;
+}
+
+.flex-control-paging li a.flex-active {
+	background-color: transparent !important;
+}
+/*Slider*/
